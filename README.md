@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td align="center">Hotel Ui</td>
+    <td align="center">Hotel UI</td>
   </tr>
   </tr>
   <tr>
