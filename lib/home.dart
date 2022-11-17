@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
             ),
             ListTile(
               title: const Text('Profile'),
-              trailing:Icon(Icons.settings),
+              trailing:const Icon(Icons.settings),
               onTap: () {
                 // Update the state of the app
                 // ...
