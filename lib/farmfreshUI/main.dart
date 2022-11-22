@@ -109,10 +109,8 @@ class _HomeState extends State<Home> {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.network(
-                              'https://raw.githubusercontent.com/webrror/flutter_ui/main/assets/images/stopwatch.png',
-                              width: 30,
-                            ),
+                            Icon(Icons.access_time_rounded,color:Colors.green,size: 30,),
+                            
                             const SizedBox(
                               height: 10,
                             ),
@@ -126,10 +124,7 @@ class _HomeState extends State<Home> {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.network(
-                              'https://raw.githubusercontent.com/webrror/flutter_ui/main/assets/images/smartphone.png',
-                              width: 30,
-                            ),
+                            Icon(Icons.phone_android_rounded,color:Colors.green,size: 30,),
                             const SizedBox(
                               height: 10,
                             ),
@@ -143,10 +138,7 @@ class _HomeState extends State<Home> {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.network(
-                              'https://raw.githubusercontent.com/webrror/flutter_ui/main/assets/images/farmer.png',
-                              width: 30,
-                            ),
+                            Icon(Icons.manage_accounts,color:Colors.green,size: 30,),
                             const SizedBox(
                               height: 10,
                             ),
