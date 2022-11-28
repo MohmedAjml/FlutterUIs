@@ -14,9 +14,11 @@
  <table>
   <tr>
     <td align="center">Auth UI</td>
+    <td align="center">Blog Home UI</td>
   </tr>
   </tr>
   <tr>
     <td align="center"><img src="screenshots/auth.gif" width=200></td>
+    <td align="center"><img src="screenshots/img_4.png" width=200></td>
   </tr>
 </table>
