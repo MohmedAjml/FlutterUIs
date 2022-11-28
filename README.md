@@ -17,6 +17,6 @@
   </tr>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/untitled.gif" width=200></td>
+    <td align="center"><img src="screenshots/auth.gif" width=200></td>
   </tr>
 </table>
