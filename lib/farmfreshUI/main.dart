@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import 'carousel.dart';
+import '../Carousel slider/carousel.dart';
 import 'catgrid.dart';
 
 
