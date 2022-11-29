@@ -1,199 +1,105 @@
-// ignore_for_file: camel_case_types, sized_box_for_whitespace
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Profile_UI extends StatelessWidget {
-  const Profile_UI({Key? key}) : super(key: key);
+class StackProfileUI extends StatelessWidget {
+  const StackProfileUI({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List options = const [
-      [
-        Icon(
-          Icons.privacy_tip_outlined,
-          color: Colors.black,
-        ),
-        'Privacy'
-      ],
-      [
-        Icon(
-          Icons.history_rounded,
-          color: Colors.black,
-        ),
-        'Purchase History'
-      ],
-      [
-        Icon(
-          Icons.help_outline_rounded,
-          color: Colors.black,
-        ),
-        'Help & Support'
-      ],
-      [
-        Icon(
-          Icons.settings_outlined,
-          color: Colors.black,
-        ),
-        'Settings'
-      ],
-      [
-        Icon(
-          Icons.person_add_alt_outlined,
-          color: Colors.black,
-        ),
-        'Invite a friend'
-      ],
-      [
-        Icon(
-          Icons.logout_rounded,
-          color: Colors.black,
-        ),
-        'Logout'
-      ]
-    ];
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      body: Container(
-        color: Colors.grey[400],
-        child: Column(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu_rounded),
+          onPressed: () {},
+        ),
+        title: const Text('Profile'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.more_vert_rounded))
+        ],
+      ),
+      body: SizedBox(
+        height: screenHeight,
+        //color: Colors.deepPurple[100],
+        child: Stack(
           children: [
-            Container(
-              height: 40,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            SizedBox(
+              height: 200,
+              child: Image.network(
+                'https://images.unsplash.com/photo-1554147090-e1221a04a025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1696&q=80',
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              top: 130,
+              width: screenWidth,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.redAccent),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            CupertinoIcons.chat_bubble_text,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      const CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 72,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.black26,
+                          radius: 70,
+                          backgroundImage: NetworkImage(
+                              'https://avatars.githubusercontent.com/u/65507007?v=4'),
+                        ),
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.blue),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            CupertinoIcons.add,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 20, left: 20),
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.black,
-                      size: 30,
+                    padding: EdgeInsets.only(top: 20, bottom: 5),
+                    child: Text(
+                      'Jerin Jacob',
+                      style:
+                          TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10, top: 10),
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.menu,
-                          color: Colors.black,
-                          size: 35,
-                        )),
+                  const Text(
+                    'Developer',
+                    style: TextStyle(fontSize: 16, color: Colors.blueGrey),
                   ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: Container(
-                height: 150,
-                width: 150,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://i.pinimg.com/originals/16/03/be/1603be4cb51b438b883cc1267e62354f.jpg')),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 70, right: 70, top: 10),
-              height: 40,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    FontAwesomeIcons.squareFacebook,
-                    color: Colors.blue[900],
-                    size: 40,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    FontAwesomeIcons.squareTwitter,
-                    color: Colors.blue[500],
-                    size: 40,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    FontAwesomeIcons.squareYoutube,
-                    color: Colors.red[900],
-                    size: 40,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    FontAwesomeIcons.squareWhatsapp,
-                    color: Colors.green[900],
-                    size: 40,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15),
-            const Center(
-              child: Text(
-                "Bruce Banner",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-            ),
-            const Center(
-              child: Text(
-                "@bruce",
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            const Center(
-              child: Text(
-                "App Developer and Global Hero",
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Expanded(
-                child: ListView.separated(
-              separatorBuilder: (context, index) {
-                return const SizedBox(
-                  height: 10,
-                );
-              },
-              physics: const BouncingScrollPhysics(),
-              itemCount: options.length,
-              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 40),
-              itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: Colors.black12.withOpacity(0.05)),
-                  child: ListTile(
-                    leading: options[index][0],
-                    title: Text(
-                      options[index][1],
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w500),
-                    ),
-                    trailing: const Icon(
-                      Icons.chevron_right_rounded,
-                      color: Colors.black,
-                    ),
-                  ),
-                );
-              },
-            ))
+            )
           ],
         ),
       ),
