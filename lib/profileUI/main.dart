@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MaterialApp(
+    home: StackProfileUI(),
+  ));
+}
+
 class StackProfileUI extends StatelessWidget {
   const StackProfileUI({super.key});
 
@@ -31,7 +37,7 @@ class StackProfileUI extends StatelessWidget {
             SizedBox(
               height: 200,
               child: Image.network(
-                'https://images.unsplash.com/photo-1554147090-e1221a04a025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1696&q=80',
+                'https://plus.unsplash.com/premium_photo-1668473400164-0607cf92b61c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80',
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -50,7 +56,7 @@ class StackProfileUI extends StatelessWidget {
                         width: 60,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: Colors.redAccent),
+                            color: Colors.blueAccent),
                         child: IconButton(
                           onPressed: () {},
                           icon: const Icon(
@@ -66,7 +72,7 @@ class StackProfileUI extends StatelessWidget {
                           backgroundColor: Colors.black26,
                           radius: 70,
                           backgroundImage: NetworkImage(
-                              'https://avatars.githubusercontent.com/u/65507007?v=4'),
+                              'https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
                         ),
                       ),
                       Container(
@@ -88,7 +94,7 @@ class StackProfileUI extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 20, bottom: 5),
                     child: Text(
-                      'Jerin Jacob',
+                      'Ivan Dong',
                       style:
                           TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
