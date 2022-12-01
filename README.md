@@ -27,10 +27,12 @@
   <tr>
     <td align="center">Staggered Gridview</td>
     <td align="center">Blog Home UI</td>
+    <td align="center">Contacts UI</td>
      </tr>
   <tr>
     <td align="center"><img src="screenshots/staggered.png" width=200></td>
     <td align="center"><img src="screenshots/img_4.png" width=200></td>
+    <td align="center"><img src="screenshots/contacts.png" width=200></td>
     </tr>
 </table>
     
