@@ -1,17 +1,25 @@
-// ignore: file_names
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class EcommerceUi extends StatefulWidget {
-  const EcommerceUi({super.key});
-
-  @override
-  State<EcommerceUi> createState() => _EcommerceUiState();
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(),
+      home: const Ecommerce(),
+    ),
+  );
 }
 
-class _EcommerceUiState extends State<EcommerceUi> {
+class Ecommerce extends StatefulWidget {
+  const Ecommerce({super.key});
 
+  @override
+  State<Ecommerce> createState() => _EcommerceState();
+}
+
+class _EcommerceState extends State<Ecommerce> {
   // * BOTTOM NAVIGATION BAR LOGIC
   int currentIndex = 0;
   void onPress(int index) {
@@ -48,7 +56,7 @@ class _EcommerceUiState extends State<EcommerceUi> {
         CupertinoIcons.gift,
         color: Colors.orange,
       ),
-      'Daily Gift'
+      'Gift Cards'
     ],
     [
       const Icon(
@@ -61,33 +69,31 @@ class _EcommerceUiState extends State<EcommerceUi> {
 
   List specialCards = [
     [
-      'Smartphones',
-      '18 Brands',
-      'https://images.unsplash.com/photo-1587131664239-885aa135f8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80'
+      'Watches',
+      '10+ Brands',
+      'https://images.unsplash.com/photo-1604242692760-2f7b0c26856d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
     ],
     [
       'Fashion',
-      '24 Brands',
-      'https://images.unsplash.com/photo-1585914924626-15adac1e6402?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80'
+      '20+ Brands',
+      'https://images.unsplash.com/photo-1567966456076-905a50a06d8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     ],
   ];
 
   List popularCards = [
     [
-      'https://images.unsplash.com/flagged/photo-1580234820596-0876d136e6d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80',
-      'PS4 Controller'
+      'https://images.unsplash.com/photo-1567967455389-e432b1ca1404?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+      'Hand bags'
     ],
     [
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
-      'Nike Shoes'
+      'https://images.unsplash.com/photo-1518061124653-4b85d51931f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
+      'Hats'
     ],
     [
-      'https://images.unsplash.com/photo-1510878933023-e2e2e3942fb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80',
-      'iPhone X'
+      'https://images.unsplash.com/photo-1595535373192-fc8935bacd89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+      'Perfumes'
     ]
   ];
-
-  // * UI
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +112,8 @@ class _EcommerceUiState extends State<EcommerceUi> {
               contentPadding: EdgeInsets.zero,
               filled: true,
               fillColor: Colors.grey[300],
+              hintText: 'Search Products',
               prefixIcon: const Icon(Icons.search),
-              hintText: 'Search Product',
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                   borderSide: BorderSide.none)),
@@ -151,32 +157,40 @@ class _EcommerceUiState extends State<EcommerceUi> {
                 height: 100,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        opacity: 0.2,
-                        image: NetworkImage(
-                            'https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80')),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.deepPurple.shade700),
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          'https://images.unsplash.com/photo-1531303435785-3853ba035cda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Text(
-                        'A Summer Surprise',
-                        style: TextStyle(color: Colors.white70),
+                      Padding(
+                        padding: EdgeInsets.only(left: 5),
+                        child: Text(
+                          'Black Friday Sale',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Cashback 20%',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700),
+                      Padding(
+                        padding: EdgeInsets.only(left: 5),
+                        child: Text(
+                          'Save Upto 40%',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700),
+                        ),
                       )
                     ],
                   ),
@@ -382,7 +396,9 @@ class _EcommerceUiState extends State<EcommerceUi> {
             BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.person),
                 label: '',
-                tooltip: 'Account')
+                tooltip: 'Account'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: '', tooltip: 'Settings')
           ],
         ),
       ),
