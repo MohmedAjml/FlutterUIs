@@ -1,4 +1,4 @@
-import 'package:application2/grid%20view/gridview.dart';
+import 'package:application2/grids/gridview.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
